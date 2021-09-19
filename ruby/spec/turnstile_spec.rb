@@ -30,4 +30,10 @@ RSpec.describe Turnstile do
     turnstile.pass
     expect(turnstile.Locked?).to be true
   end
+  it "shoule not be passed again" do
+    turnstile = Turnstile.new
+    turnstile.coin
+    turnstile.pass
+    expect {turnstile.pass}.to raise_error(AASM::InvalidTransition)
+  end
 end
