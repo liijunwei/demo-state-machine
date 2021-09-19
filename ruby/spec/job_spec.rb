@@ -1,4 +1,3 @@
-require 'pry'
 require "#{ENV['PWD']}/demo01/job"
 
 RSpec.describe Job do
