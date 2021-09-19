@@ -3,6 +3,7 @@ require 'aasm'
 # http://smc.sourceforge.net/slides/SMC_Tutorial.pdf
 #
 # Description of the normal operation of a turnstile(转门`turn-style`):
+#
 # 1. Turnstile initially locked
 # 2. A coin or ticket is inserted (event)
 # 3. Triggers action: turnstile unlocks
