@@ -1,6 +1,9 @@
 require_relative "../aasm/turnstile"
 
 RSpec.describe Turnstile do
+  before {ENV['APPLICATION_MODE'] = 'test'}
+  after  {ENV['APPLICATION_MODE'] = nil}
+
   it "should have initial state of `Locked`" do
     expect(Turnstile.new.aasm.current_state).to eq(:Locked)
   end

@@ -59,24 +59,33 @@ class Turnstile
 
     event :coin do
       error do |e|
-        log_error
+        log_error(e)
       end
       transitions from: :Locked, to: :Unlocked
     end
 
     event :pass do
       error do |e|
-        log_error
+        log_error(e)
       end
       transitions from: :Unlocked, to: :Locked
     end
   end
 
+  def testing?
+    ENV['APPLICATION_MODE'] == 'test'
+  end
+
   def log_status_change
+    testing? and return
+
     puts "> #{Time.now} changing from #{aasm.from_state} to #{aasm.to_state} (event: #{aasm.current_event})"
   end
 
-  def log_error
+  def log_error(e)
+    testing? and raise e
+
     puts "> #{Time.now} error happened..."
+    raise e
   end
 end
