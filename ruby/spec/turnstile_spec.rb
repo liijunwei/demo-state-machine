@@ -2,11 +2,11 @@ require_relative "../aasm/turnstile"
 
 RSpec.describe Turnstile do
   it "should have initial state of `Locked`" do
-    expect(:Locked).to eq(Turnstile.new.aasm.current_state)
+    expect(Turnstile.new.aasm.current_state).to eq(:Locked)
   end
   it "should be locked" do
     turnstile = Turnstile.new
-    expect(true).to eq(turnstile.Locked?)
+    expect(turnstile.Locked?).to eq(true)
   end
   it "may coin" do
     turnstile = Turnstile.new
