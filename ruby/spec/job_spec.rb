@@ -13,9 +13,10 @@ RSpec.describe Job do
     expect(true).to eq(job.running?)
   end
 
-  it "should be running" do
+  it "is running, and should not be run again" do
     job = Job.new
     job.run
     expect(true).to eq(job.running?)
+    expect {job.run}.to raise_error(AASM::InvalidTransition)
   end
 end
