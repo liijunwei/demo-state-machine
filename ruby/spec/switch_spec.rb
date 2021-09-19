@@ -6,28 +6,28 @@ RSpec.describe Switch do
   end
   it "should be off" do
     switch = Switch.new
-    expect(true).to eq(switch.off?)
+    expect(switch.off?).to eq(true)
   end
   it "should be off, and can switch_on" do
     switch = Switch.new
-    expect(true).to eq(switch.off?)
-    expect(true).to eq(switch.switch_on)
-    expect(true).to eq(switch.on?)
+    expect(switch.off?).to eq(true)
+    expect(switch.switch_on).to eq(true)
+    expect(switch.on?).to eq(true)
   end
   it "should be off, and can not switch_off again" do
     switch = Switch.new
-    expect(true).to eq(switch.off?)
+    expect(switch.off?).to eq(true)
     expect {switch.switch_off}.to raise_error(AASM::InvalidTransition)
   end
   it "should be on" do
     switch = Switch.new
     switch.switch_on
-    expect(true).to eq(switch.on?)
+    expect(switch.on?).to eq(true)
   end
   it "should be on, and can not switch_on again" do
     switch = Switch.new
     switch.switch_on
-    expect(true).to eq(switch.on?)
+    expect(switch.on?).to eq(true)
     expect {switch.switch_on}.to raise_error(AASM::InvalidTransition)
   end
   it "may switch_on" do
