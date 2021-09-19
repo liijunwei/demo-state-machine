@@ -6,7 +6,7 @@ RSpec::Core::RakeTask.new(:spec)
 task :default  => :spec
 
 desc 'Run Console'
-task :console do |t, args|
+task :console do
   require './demo01/job'
   require 'pry'
 
@@ -14,7 +14,7 @@ task :console do |t, args|
   job.aasm.current_state
   job.run
 
-  cd job
+  # cd job
 
   binding.pry
 end
