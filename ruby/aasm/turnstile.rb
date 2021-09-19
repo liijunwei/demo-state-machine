@@ -14,7 +14,9 @@ require 'aasm'
 # software entities should be open for extension but closed for modification
 
 # States
-
+# 每一位的状态: 0 或 1, 多位上的组合, 可能性是无限多中
+# defination: `the particular condition that someone or something is in at a specific time.`
+# defination: `A state is a description of the status of a system that is waiting to execute a transition.`
 
 # Transitions
 
