@@ -7,15 +7,15 @@ class Switch
   include AASM
 
   aasm do
-    state :closed, initial: true
-    state :open
+    state :off, initial: true
+    state :on
 
     event :switch_on do
-      transitions from: :closed, to: :open
+      transitions from: :off, to: :on
     end
 
     event :switch_off do
-      transitions from: :open, to: :closed
+      transitions from: :on, to: :of
     end
   end
 end
