@@ -6,7 +6,7 @@ RSpec.describe Switch do
   end
   it "should be off" do
     switch = Switch.new
-    expect(switch.off?).to eq(true)
+    expect(switch.off?).to be true
   end
   it "should be off, and can switch_on" do
     switch = Switch.new
