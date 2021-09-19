@@ -1,0 +1,14 @@
+desc 'Run Console'
+task :console do |t, args|
+  env = ENV["APP_ENV"] || 'development'
+
+  puts "Loading #{env} environment..."
+  require './demo01/switch'
+  require 'pry'
+  require 'pry/completion'
+
+  ARGV.clear
+  binding.pry
+end
+
+task default: :console

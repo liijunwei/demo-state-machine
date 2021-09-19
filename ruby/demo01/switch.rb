@@ -28,11 +28,13 @@ end
 
 job01 = Job.new
 
-puts job01.running?
+puts "job01.running? #{job01.running?}"
 
-puts "Start run the job..."
-job01.run
-puts job01.running?
+puts "job01.run #{job01.run}"
+puts "job01.running? #{job01.running?}"
 
 puts "job01.may_run? #{job01.may_run?}"
+puts "job01.may_clean? #{job01.may_clean?}"
+# puts "job01.may_sleep? #{job01.may_sleep?}"
 
+job01.sleep { puts "#{Time.now} someone stopped the job..." }
