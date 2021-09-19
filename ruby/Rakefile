@@ -5,7 +5,6 @@ task :console do |t, args|
   puts "Loading #{env} environment..."
   require './demo01/switch'
   require 'pry'
-  require 'pry/completion'
 
   ARGV.clear
   binding.pry
