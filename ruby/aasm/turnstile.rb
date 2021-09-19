@@ -58,15 +58,25 @@ class Turnstile
     state :Unlocked
 
     event :coin do
+      error do |e|
+        log_error
+      end
       transitions from: :Locked, to: :Unlocked
     end
 
     event :pass do
+      error do |e|
+        log_error
+      end
       transitions from: :Unlocked, to: :Locked
     end
   end
 
   def log_status_change
     puts "> #{Time.now} changing from #{aasm.from_state} to #{aasm.to_state} (event: #{aasm.current_event})"
+  end
+
+  def log_error
+    puts "> #{Time.now} error happened..."
   end
 end

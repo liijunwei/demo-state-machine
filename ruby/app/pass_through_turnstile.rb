@@ -1,7 +1,5 @@
 require_relative '../aasm/turnstile'
 
-turnstile = Turnstile.new
-
 def welcome
   puts
   puts "Welcome to my happly land, you have to insert a coin to pass..."
@@ -9,7 +7,11 @@ end
 
 def hint
   puts
-  print "please enter coin/pass, exit to abort: "
+  print "Please enter coin/pass, exit to abort: "
+end
+
+def smile
+  ":)"
 end
 
 def farewell
@@ -22,17 +24,17 @@ at_exit { farewell }
 
 welcome
 
+turnstile = Turnstile.new
+
 loop do
   hint
   event = gets.strip
 
   case event
   when 'coin'
-    turnstile.coin
-    puts "turnstile unlocked, please pass"
+    turnstile.coin && puts("Please pass through #{smile}")
   when 'pass'
-    turnstile.pass
-    puts "you passed, and turnstile locked, enjoy your journal"
+    turnstile.pass && puts("You passed, enjoy your journal #{smile}")
   when 'exit'
     break
   else
