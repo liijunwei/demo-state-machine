@@ -33,3 +33,6 @@ puts job01.running?
 puts "Start run the job..."
 job01.run
 puts job01.running?
+
+puts "job01.may_run? #{job01.may_run?}"
+
