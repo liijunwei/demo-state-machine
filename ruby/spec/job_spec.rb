@@ -26,4 +26,11 @@ RSpec.describe Job do
     expect(true).to eq(job.running?)
     expect(true).to eq(job.may_sleep?)
   end
+
+  it "is running, and is may sleep" do
+    job = Job.new
+    job.run
+    expect(true).to eq(job.running?)
+    expect(true).to eq(job.may_sleep?)
+  end
 end
