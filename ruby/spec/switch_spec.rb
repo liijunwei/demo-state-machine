@@ -41,7 +41,7 @@ RSpec.describe Switch do
   it "may not switch_on" do
     switch = Switch.new
     switch.switch_on
-    expect(false).to eq(switch.may_switch_on?)
+    expect(false).to eq(switch.may_not_switch_on?)
   end
   it "may not switch_off" do
     expect(false).to eq(Switch.new.may_switch_off?)
