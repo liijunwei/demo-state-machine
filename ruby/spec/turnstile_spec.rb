@@ -1,4 +1,4 @@
-require "#{ENV['PWD']}/aasm/turnstile"
+require_relative "../aasm/turnstile"
 
 RSpec.describe Turnstile do
   it "should have initial state of `Locked`" do

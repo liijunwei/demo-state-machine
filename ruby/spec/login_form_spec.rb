@@ -1,4 +1,4 @@
-require "#{ENV['PWD']}/aasm/login_form"
+require_relative "../aasm/login_form"
 
 RSpec.describe LoginForm do
   it "should have initial state of `start`" do

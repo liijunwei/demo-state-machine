@@ -1,4 +1,4 @@
-require "#{ENV['PWD']}/aasm/switch"
+require_relative "../aasm/switch"
 
 RSpec.describe Switch do
   it "should have initial state of `off`" do
