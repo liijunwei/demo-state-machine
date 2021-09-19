@@ -15,4 +15,10 @@ RSpec.describe Switch do
     switch.switch_on
     expect(true).to eq(switch.on?)
   end
+  it "should be on, and can not switch_on again" do
+    switch = Switch.new
+    switch.switch_on
+    expect(true).to eq(switch.on?)
+    expect {switch.switch_on}.to raise_error(AASM::InvalidTransition)
+  end
 end
