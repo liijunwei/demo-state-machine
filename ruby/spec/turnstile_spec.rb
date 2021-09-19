@@ -22,4 +22,12 @@ RSpec.describe Turnstile do
     turnstile.coin
     expect {turnstile.coin}.to raise_error(AASM::InvalidTransition)
   end
+  it "shoule be passed" do
+    turnstile = Turnstile.new
+    expect(turnstile.Locked?).to be true
+    turnstile.coin
+    expect(turnstile.Unlocked?).to be true
+    turnstile.pass
+    expect(turnstile.Locked?).to be true
+  end
 end
