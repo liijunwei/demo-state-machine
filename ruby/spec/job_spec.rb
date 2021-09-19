@@ -1,3 +1,6 @@
+# https://github.com/aasm/aasm#rspec
+# AASM provides some matchers for RSpec:
+
 require "#{ENV['PWD']}/demo01/job"
 
 RSpec.describe Job do
