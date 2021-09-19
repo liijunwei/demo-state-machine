@@ -11,8 +11,8 @@ class Job
     state :running, :cleaning
 
     event :run do
-      before {puts "Before state: #{aasm.current_state}"}
-      after {puts "After state: #{aasm.current_state}"}
+      # before {puts "Before state: #{aasm.current_state}"}
+      # after {puts "After state: #{aasm.current_state}"}
       transitions from: :sleeping, to: :running
     end
 
