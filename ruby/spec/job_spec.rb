@@ -1,7 +1,7 @@
 # https://github.com/aasm/aasm#rspec
 # AASM provides some matchers for RSpec:
 
-require "#{ENV['PWD']}/demo01/job"
+require "#{ENV['PWD']}/aasm/job"
 
 RSpec.describe Job do
   it "should have initial state of `sleeping`" do

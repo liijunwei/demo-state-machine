@@ -7,7 +7,7 @@ task :default  => :spec
 
 desc 'Run Console'
 task :console do
-  require './demo01/job'
+  require './aasm/job'
   require 'pry'
 
   job = Job.new
