@@ -28,7 +28,7 @@ require 'aasm'
 
 # Transitions
 #
-# For each state, we write out:(对每一个状态分别分析)
+# For each state, we write out:(分别分析每一个状态)
 #     the transition
 #     what the next state will be
 #     what action to perform (if any)
