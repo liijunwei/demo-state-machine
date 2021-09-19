@@ -13,6 +13,13 @@ require 'aasm'
 # The state pattern respects the OCP:
 # software entities should be open for extension but closed for modification
 
+# state machine
+# A state machine is an alternative way of modeling program state:
+# Instead of defining independent variables, a machine is crafted specifically
+# to handle what states are possible, # and when a machine is a given state,
+# what next state is allowed. Those five independent boolean variables are replaced
+# with a single state machine which intrinsically can only be in valid states.
+
 # States
 # 每一位的状态: 0 或 1, 多位上的组合, 可能性是无限多中
 # defination: `the particular condition that someone or something is in at a specific time.`
