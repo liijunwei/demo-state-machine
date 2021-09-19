@@ -16,7 +16,7 @@ require 'aasm'
 # state machine
 # A state machine is an alternative way of modeling program state:
 # Instead of defining independent variables, a machine is crafted specifically
-# to handle what states are possible, # and when a machine is a given state,
+# to handle what states are possible, and when a machine is a given state,
 # what next state is allowed. Those five independent boolean variables are replaced
 # with a single state machine which intrinsically can only be in valid states.
 
