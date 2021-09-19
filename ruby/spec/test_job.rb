@@ -5,13 +5,19 @@ require "#{ENV['PWD']}/demo01/job"
 
 RSpec.describe Job do
   it "should be sleeping" do
-    job01 = Job.new
-    expect(true).to eq(job01.sleeping?)
+    job = Job.new
+    expect(true).to eq(job.sleeping?)
   end
 
   it "should be running" do
-    job01 = Job.new
-    job01.run
-    expect(true).to eq(job01.running?)
+    job = Job.new
+    job.run
+    expect(true).to eq(job.running?)
+  end
+
+  it "should be running" do
+    job = Job.new
+    job.run
+    expect(true).to eq(job.running?)
   end
 end
