@@ -12,4 +12,9 @@ RSpec.describe Turnstile do
     turnstile = Turnstile.new
     expect(turnstile.may_coin?).to be true
   end
+  it "shoule be unlocked" do
+    turnstile = Turnstile.new
+    turnstile.coin
+    expect(turnstile.Unlocked?).to be true
+  end
 end
