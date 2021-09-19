@@ -21,7 +21,7 @@ class Turnstile
       transitions from: :Locked, to: :Unlocked
     end
 
-    event :push do
+    event :pass do
       transitions from: :Unlocked, to: :Locked
     end
   end
