@@ -15,6 +15,7 @@ task :console do
   job.run
 
   # cd job
+  # cd job.aasm
 
   binding.pry
 end
