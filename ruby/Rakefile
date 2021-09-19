@@ -4,3 +4,15 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
 task :default  => :spec
+
+desc 'Run Console'
+task :console do |t, args|
+  require './demo01/job'
+  require 'pry'
+
+  job = Job.new
+  puts job.state
+  job.run
+
+  binding.pry
+end

@@ -5,12 +5,17 @@ Bundler.require(:default)
 
 class Job
   include AASM
+  def initialize(state = :sleeping)
+    @state = state
+  end
 
   aasm do
     state :sleeping, initial: true
     state :running, :cleaning
 
     event :run do
+      before {puts "Before state: #{aasm.current_state}"; @state = aasm.current_state}
+      after {puts "After state: #{aasm.current_state}"; @state = aasm.current_state}
       transitions from: :sleeping, to: :running
     end
 
@@ -23,4 +28,7 @@ class Job
     end
   end
 
+  def state
+    @state
+  end
 end
