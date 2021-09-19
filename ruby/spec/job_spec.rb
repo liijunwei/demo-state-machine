@@ -1,6 +1,10 @@
 require "#{ENV['PWD']}/demo01/job"
 
 RSpec.describe Job do
+  it "should have initial state of `sleeping`" do
+    job = Job.new
+    expect(:sleeping).to eq(job.aasm.current_state)
+  end
   it "should be sleeping" do
     job = Job.new
     expect(true).to eq(job.sleeping?)
