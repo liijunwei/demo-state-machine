@@ -14,5 +14,7 @@ task :console do |t, args|
   job.aasm.current_state
   job.run
 
+  cd job
+
   binding.pry
 end
