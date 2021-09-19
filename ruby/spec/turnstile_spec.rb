@@ -8,4 +8,8 @@ RSpec.describe Turnstile do
     turnstile = Turnstile.new
     expect(true).to eq(turnstile.Locked?)
   end
+  it "may coin" do
+    turnstile = Turnstile.new
+    expect(turnstile.may_coin?).to eq(true)
+  end
 end
