@@ -7,8 +7,8 @@ task :default  => :spec
 
 desc 'Run Console'
 task :console do
-  require './aasm/job'
   require 'pry'
+  Dir['aasm/*.rb'].each {|file| require_relative file}
 
   job = Job.new
   job.aasm.current_state
