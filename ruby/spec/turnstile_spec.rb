@@ -20,7 +20,6 @@ RSpec.describe Turnstile do
   it "shoule not be coined again" do
     turnstile = Turnstile.new
     turnstile.coin
-    expect(turnstile.Unlocked?).to be true
     expect {turnstile.coin}.to raise_error(AASM::InvalidTransition)
   end
 end
