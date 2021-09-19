@@ -5,6 +5,12 @@ RSpec.describe Switch do
     switch = Switch.new
     expect(true).to eq(switch.off?)
   end
+  it "should be off, and can switch_on" do
+    switch = Switch.new
+    expect(true).to eq(switch.off?)
+    expect(true).to eq(switch.switch_on)
+    expect(true).to eq(switch.on?)
+  end
   it "should be off, and can not switch_off again" do
     switch = Switch.new
     expect(true).to eq(switch.off?)
