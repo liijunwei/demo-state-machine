@@ -10,6 +10,9 @@ require 'aasm'
 # 4. A person passes through turnstile (event)
 # 5. Triggers action: turnstile locks again
 
+# The state pattern respects the OCP:
+# software entities should be open for extension but closed for modification
+
 class Turnstile
   include AASM
 
