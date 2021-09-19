@@ -6,10 +6,10 @@ RSpec.describe Turnstile do
   end
   it "should be locked" do
     turnstile = Turnstile.new
-    expect(turnstile.Locked?).to eq(true)
+    expect(turnstile.Locked?).to be true
   end
   it "may coin" do
     turnstile = Turnstile.new
-    expect(turnstile.may_coin?).to eq(true)
+    expect(turnstile.may_coin?).to be true
   end
 end
