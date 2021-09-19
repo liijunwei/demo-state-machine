@@ -9,7 +9,7 @@ end
 
 def hint
   puts
-  print "please enter coin/pass, exit to exit the program: "
+  print "please enter coin/pass, exit to abort: "
 end
 
 def farewell

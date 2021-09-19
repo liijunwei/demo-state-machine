@@ -52,6 +52,8 @@ class Turnstile
   include AASM
 
   aasm do
+    after_all_transitions :log_status_change
+
     state :Locked, initial: true
     state :Unlocked
 
@@ -62,5 +64,9 @@ class Turnstile
     event :pass do
       transitions from: :Unlocked, to: :Locked
     end
+  end
+
+  def log_status_change
+    puts "> #{Time.now} changing from #{aasm.from_state} to #{aasm.to_state} (event: #{aasm.current_event})"
   end
 end
