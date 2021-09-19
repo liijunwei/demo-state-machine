@@ -1,8 +1,6 @@
 require 'pry'
 require "#{ENV['PWD']}/demo01/job"
 
-# rspec spec/test_job.rb
-
 RSpec.describe Job do
   it "should be sleeping" do
     job = Job.new

@@ -30,8 +30,8 @@ PLATFORMS
 DEPENDENCIES
   aasm (~> 5.2)
   pry (~> 0.14.1)
-  rspec
-  rspec-core
+  rspec (~> 3.10)
+  rspec-core (~> 3.10, >= 3.10.1)
 
 BUNDLED WITH
    2.2.3
