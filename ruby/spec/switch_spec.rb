@@ -31,19 +31,19 @@ RSpec.describe Switch do
     expect {switch.switch_on}.to raise_error(AASM::InvalidTransition)
   end
   it "may switch_on" do
-    expect(true).to eq(Switch.new.may_switch_on?)
+    expect(Switch.new.may_switch_on?).to be true
   end
   it "may switch_off" do
     switch = Switch.new
     switch.switch_on
-    expect(true).to eq(switch.may_switch_off?)
+    expect(switch.may_switch_off?).to be true
   end
   it "may not switch_on" do
     switch = Switch.new
     switch.switch_on
-    expect(false).to eq(switch.may_switch_on?)
+    expect(switch.may_switch_on?).to be false
   end
   it "may not switch_off" do
-    expect(false).to eq(Switch.new.may_switch_off?)
+    expect(Switch.new.may_switch_off?).to be false
   end
 end
