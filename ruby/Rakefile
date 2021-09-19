@@ -3,8 +3,11 @@ task :console do |t, args|
   env = ENV["APP_ENV"] || 'development'
 
   puts "Loading #{env} environment..."
-  require './demo01/*'
+  require './demo01/job'
   require 'pry'
+
+  job01 = Job.new
+  job01.current_state
 
   ARGV.clear
   binding.pry
