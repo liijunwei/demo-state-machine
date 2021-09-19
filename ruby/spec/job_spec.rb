@@ -5,23 +5,23 @@ require_relative "../aasm/job"
 
 RSpec.describe Job do
   it "should have initial state of `sleeping`" do
-    expect(:sleeping).to eq(Job.new.aasm.current_state)
+    expect(Job.new.aasm.current_state).to eq(:sleeping)
   end
   it "should be sleeping" do
     job = Job.new
-    expect(true).to eq(job.sleeping?)
+    expect(job.sleeping?).to be true
   end
 
   it "should be running" do
     job = Job.new
     job.run
-    expect(true).to eq(job.running?)
+    expect(job.running?).to be true
   end
 
   it "is running, and should not be run again" do
     job = Job.new
     job.run
-    expect(true).to eq(job.running?)
+    expect(job.running?).to be true
     expect {job.run}.to raise_error(AASM::InvalidTransition)
   end
 
