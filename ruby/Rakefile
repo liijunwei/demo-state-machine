@@ -1,16 +1,6 @@
-desc 'Run Console'
-task :console do |t, args|
-  env = ENV["APP_ENV"] || 'development'
+require 'rake'
+require 'rspec/core/rake_task'
 
-  puts "Loading #{env} environment..."
-  require './demo01/job'
-  require 'pry'
+RSpec::Core::RakeTask.new(:spec)
 
-  job01 = Job.new
-  job01.current_state
-
-  ARGV.clear
-  binding.pry
-end
-
-task default: :console
+task :default  => :spec
