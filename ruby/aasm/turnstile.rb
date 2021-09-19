@@ -13,6 +13,16 @@ require 'aasm'
 # The state pattern respects the OCP:
 # software entities should be open for extension but closed for modification
 
+# States
+
+
+# Transitions
+
+
+# Actions
+
+
+
 class Turnstile
   include AASM
 
