@@ -27,7 +27,11 @@ require 'aasm'
 # defination: `Program state is the set of all variables in a program and their values at any point in time [see Wikipedia](https://en.wikipedia.org/wiki/State_(computer_science)#Program_state)`
 
 # Transitions
-
+#
+# For each state, we write out:
+#     the transition
+#     what the next state will be
+#     what action to perform (if any)
 
 # Actions
 
