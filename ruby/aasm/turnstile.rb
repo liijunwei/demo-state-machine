@@ -33,6 +33,15 @@ require 'aasm'
 #     what the next state will be
 #     what action to perform (if any)
 
+State Transition Next State Action
+
+state     | transition| next_state | action
+----------|-----------|------------|--------
+locked    | coin      | unlocked   | unlock
+locked    | pass      | locked     | alarm
+unlocked  | coin      | unlocked   | thankyou
+unlocked  | pass      | locked     | lock
+
 # Actions
 
 
