@@ -11,7 +11,7 @@ task :console do |t, args|
   require 'pry'
 
   job = Job.new
-  puts job.state
+  job.aasm.current_state
   job.run
 
   binding.pry
