@@ -2,8 +2,7 @@ require "#{ENV['PWD']}/demo01/switch"
 
 RSpec.describe Switch do
   it "should have initial state of `off`" do
-    switch = Switch.new
-    expect(:off).to eq(switch.aasm.current_state)
+    expect(:off).to eq(Switch.new.aasm.current_state)
   end
   it "should be off" do
     switch = Switch.new
