@@ -54,6 +54,8 @@ class Turnstile
   aasm do
     after_all_transitions :log_status_change
 
+    # 1. 如果不指定 `initial`, 那么在最先声明的state是初始状态
+    # 2. 如果指定 `initial`, 那么初始状态可以不是最先声明的
     state :Locked, initial: true
     state :Unlocked
 
