@@ -71,6 +71,7 @@ class Turnstile
         log_error(e)
       end
 
+      # 两种注册回调的方式
       before {say_before}
       after {say_after}
       transitions from: :Unlocked, to: :Locked
