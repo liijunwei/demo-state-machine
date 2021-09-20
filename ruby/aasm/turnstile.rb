@@ -59,7 +59,7 @@ class Turnstile
     state :Locked, initial: true
     state :Unlocked
 
-    event :coin do
+    event :coin, before: :say_before do
       error do |e|
         log_error(e)
       end
@@ -70,8 +70,19 @@ class Turnstile
       error do |e|
         log_error(e)
       end
+
+      before {say_before}
+      after {say_after}
       transitions from: :Unlocked, to: :Locked
     end
+  end
+
+  def say_before
+    puts "hi before... (event: #{aasm.current_event})"
+  end
+
+  def say_after
+    puts "hi after... (event: #{aasm.current_event})"
   end
 
   def testing?
