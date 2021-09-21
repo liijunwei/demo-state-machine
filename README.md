@@ -1,1 +1,1 @@
-My exercises while learing state machine(ruby aasm)
+My exercises while learning state machine(ruby aasm)
