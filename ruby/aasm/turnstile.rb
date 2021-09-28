@@ -48,6 +48,7 @@ require 'aasm'
 # https://en.wikipedia.org/wiki/Finite-state_machine
 # Considered as a state machine, the turnstile has two possible states: Locked and Unlocked.[4] There are two possible inputs that affect its state: putting a coin in the slot (coin) and pushing the arm (push). In the locked state, pushing on the arm has no effect; no matter how many times the input push is given, it stays in the locked state. Putting a coin in – that is, giving the machine a coin input – shifts the state from Locked to Unlocked. In the unlocked state, putting additional coins in has no effect; that is, giving additional coin inputs does not change the state. However, a customer pushing through the arms, giving a push input, shifts the state back to Locked.
 
+# 敏捷软件开发(Agile Software Development, Principles, Patterns, and Practices) Chapter 23 State Pattern
 # initial state
 # event
 # final state
