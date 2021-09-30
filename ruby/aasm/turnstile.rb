@@ -35,7 +35,7 @@ require 'aasm'
 
 # State Transition Next State Action
 
-# state     | transition(action)| next_state | action
+# state     | transition(event) | next_state | action
 # ----------|-------------------|------------|--------
 # locked    | coin              | unlocked   | unlock
 # locked    | pass              | locked     | alarm
