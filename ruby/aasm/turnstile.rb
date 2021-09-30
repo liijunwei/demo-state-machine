@@ -35,12 +35,12 @@ require 'aasm'
 
 # State Transition Next State Action
 
-# state     | transition| next_state | action
-# ----------|-----------|------------|--------
-# locked    | coin      | unlocked   | unlock
-# locked    | pass      | locked     | alarm
-# unlocked  | coin      | unlocked   | thankyou
-# unlocked  | pass      | locked     | lock
+# state     | transition(action)| next_state | action
+# ----------|-------------------|------------|--------
+# locked    | coin              | unlocked   | unlock
+# locked    | pass              | locked     | alarm
+# unlocked  | coin              | unlocked   | thankyou
+# unlocked  | pass              | locked     | lock
 
 # Actions
 
